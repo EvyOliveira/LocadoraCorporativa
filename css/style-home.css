@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../images/car.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.formLogin {
+    width: 350px;
+    height: 350px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 1px 0px 15px rgba(0,0,0,0.2);
+    opacity: 90%;        
+    border-radius: 20px; /*Borda Arredondada*/   
+    /*Posicionamento do Form*/
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+h3 {
+    padding-top: 15px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    text-align: center;    
+    color: #445626;
+}
+
+input, button {    
+    margin-bottom: 15px;    
+    padding-left: 5px; /*Espaço no placeholder*/
+    width: 80%;
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /*Borda Arredondada*/   
+    box-sizing: border-box;
+    outline-color: rgb(105, 153, 241); /*Linha de borda*/
+}
+
+button { /*60,94,248*/
+    color: white;
+    background-color: #40a339;
+}
+
+span {
+    font-size: smaller;    
+}
+
+a {
+    font-size: smaller;     
+    color: rgb(50, 18, 233);   
+    text-decoration: none;   
+}
+
+.formResetSenha {
+    width: 350px;
+    height: 250px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 1px 0px 15px rgba(0,0,0,0.2);
+    opacity: 90%;        
+    border-radius: 20px; /*Borda Arredondada*/   
+    /*Posicionamento do Form*/
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.formCadastro {
+    width: 350px;
+    height: 400px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 1px 0px 15px rgba(0,0,0,0.2);
+    opacity: 90%;        
+    border-radius: 20px; /*Borda Arredondada*/   
+    /*Posicionamento do Form*/
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translateX(-50%) translateY(-50%);
+}

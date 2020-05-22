@@ -1,6 +1,6 @@
-# [Rent a Car no Github](https://github.com/EvyOliveira/LocadoraPHP)
+# [Rent a Car](https://github.com/EvyOliveira/LocadoraPHP)
 
-Este projeto também estará disponível no Webhost[](http://localhost/Locadora%20Corporativa/index.php).
+Este projeto também estará disponível no Webhost: http://localhost/Locadora%20Corporativa/index.php
 
 > Projeto pertencente à disciplina eletiva de PHP - Linguagem de Programação para internet. Consiste em representar um painel administrativo do negócio de uma locadora de veículos corporativos. 
 > A ideia inicial é apresentar um sistema de acesso com informações que poderão ser acessadas por administradores e/ou gestores das respectivas filiais. A solução é dada por um banco de dados relacional que armazenará dados cadastrais do sistema e uma aplicação web para interação entre os colaboradores da locadora corporativa. 
@@ -30,7 +30,7 @@ Este projeto também estará disponível no Webhost[](http://localhost/Locadora%
 
 ## Versionamento
 
-Para acompanhamento do versionamento, siga o link onde possui a relação de todos os commits [](https://github.com/EvyOliveira/LocadoraPHP/commits).
+Para acompanhamento do versionamento, siga o link onde possui a relação de todos os commits: https://github.com/EvyOliveira/LocadoraPHP/commits
 
 ## Rode o projeto localmente
 
@@ -50,8 +50,8 @@ $ git clone https://github.com/EvyOliveira/LocadoraPHP
 - Selecionar a porta de resposta da aplicação
 
 ## Banco de dados
-Abaixo, segue as queries utilizadas para criação de tabelas:
 
+Abaixo, segue as queries utilizadas para criação de tabelas:
 ```sh
 CREATE TABLE `usuarios` (   `id` int(11) NOT NULL COMMENT 'Chave primária da relação usuários',   `nome` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Nome do usuário',   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Email do usuário',   `senha` varchar(40) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Senha do usuário',   `id_perfil` int(11) NOT NULL COMMENT 'Chave do perfil do usuário' ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 CREATE TABLE `perfis` (   `id` int(11) NOT NULL COMMENT 'Chave primária da relação',   `nome` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Nome do perfil' ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

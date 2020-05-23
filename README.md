@@ -54,5 +54,11 @@ $ git clone https://github.com/EvyOliveira/LocadoraPHP
 Abaixo, segue as queries utilizadas para criação de tabelas:
 ```sh
 CREATE TABLE `usuarios` (   `id` int(11) NOT NULL COMMENT 'Chave primária da relação usuários',   `nome` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Nome do usuário',   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Email do usuário',   `senha` varchar(40) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Senha do usuário',   `id_perfil` int(11) NOT NULL COMMENT 'Chave do perfil do usuário' ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
+(1, 'Zé das Couves', 'zedascouves@gmail.com', '123456'),
+(2, 'Maria da Couves', 'mariadascouves@gmail.com', '654321'),
+(3, 'teste', 'teste@gmail.com', 'teste');
+
 CREATE TABLE `perfis` (   `id` int(11) NOT NULL COMMENT 'Chave primária da relação',   `nome` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Nome do perfil' ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 ```

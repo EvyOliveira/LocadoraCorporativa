@@ -31,7 +31,9 @@
 		    $myuser->setNome($_SESSION["dados"][0]->nome);
 		    $myuser->setEmail($_SESSION["dados"][0]->email);
             $myuser->update($myuser->getId());
-            Header("Location:../index.php");                      
+            //Header("Location:../index.php");     
+            $URL = "../index.php";
+            echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";                 
         }
 	?>        
 </body>

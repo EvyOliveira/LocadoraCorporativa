@@ -1,6 +1,29 @@
 <?php
 	include "./scripts/usuarios.php";
 ?>
+<?php
+    $myuser = new usuarios();
+    if(!empty($_POST['f_mail']) and !empty($_POST['f_senha'])){
+        $myuser->setEmail($_POST['f_mail']);
+        $myuser->setSenha($_POST['f_senha']);
+        $retorno = $myuser->autenticacao();
+        //print_r($retorno);                   
+        //print_r(count($retorno));
+        if(count($retorno) > 0){
+            if($_POST['f_senha'] == "123456"){                       
+                //Header("Location:./views/trocaSenhaTemp.php");
+                $URL = "./views/trocaSenhaTemp.php";
+                echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
+            }else{                        
+                //Header("Location:./views/cadastro.php");
+                $URL = "./views/cadastro.php";
+                echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
+            }
+        }else{
+            echo "<script language=javascript>alert( 'Usuário/Senha Incorreto!' );</script>";
+        }
+    }
+?>  
 <html>
     <head>
         <meta charset="UTF-8">
@@ -21,25 +44,6 @@
                     <span>Não tem cadastro?</span>
                     <a href="./views/novoUsuario.php">Clique aqui.</a>
             </form>
-        </div>
-        <?php
-			$myuser = new usuarios();
-			if(!empty($_POST['f_mail']) and !empty($_POST['f_senha'])){
-				$myuser->setEmail($_POST['f_mail']);
-                $myuser->setSenha($_POST['f_senha']);
-                $retorno = $myuser->autenticacao();
-                //print_r($retorno);                   
-                //print_r(count($retorno));
-                if(count($retorno) > 0){
-                    if($_POST['f_senha'] == "123456"){                       
-                        Header("Location:./views/trocaSenhaTemp.php");
-                    }else{                        
-                        Header("Location:./views/cadastro.php");
-                    }
-                }else{
-                    echo "<script language=javascript>alert( 'Usuário/Senha Incorreto!' );</script>";
-                }
-			}
-		?>        
+        </div>      
     </body>    	
 </html>

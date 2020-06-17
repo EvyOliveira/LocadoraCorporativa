@@ -1,5 +1,5 @@
 <?php
-	include "../scripts/usuarios.php";
+    include "../scripts/usuarios.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="shortcut icon" href="assets/img/logo-fav.png">
+        <link rel="shortcut icon" href="">
         <title>Cadastro de Usuários</title>
         <link rel="stylesheet" type="text/css" href="../lib/perfect-scrollbar/css/perfect-scrollbar.css"/>
         <link rel="stylesheet" type="text/css" href="../lib/material-design-icons/css/material-design-iconic-font.min.css"/>
@@ -20,26 +20,27 @@
         <link rel="stylesheet" type="text/css" href="../css/app.css"/>
 	</head>
 	<body>
-    <nav class="navbar navbar-expand fixed-top be-top-header">
-        <div class="container-fluid">
-          <div class="be-navbar-header"><a class="navbar-brand" href=""></a>
-          </div>
-          <div class="page-title"><span><h1>Cadastro de Usuários</h1></span></div>
-          <div class="be-right-navbar">
-            <ul class="nav navbar-nav float-right be-user-nav">
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false"><img src="" alt="Avatar"><span class="user-name">Túpac Amaru</span></a>
-                <div class="dropdown-menu" role="menu">     
-                  <div class="user-info">
-                    <div class="user-name">Túpac Amaru</div>
-                    <div class="user-position online">Available</div>
-                  </div><a class="dropdown-item" href=""><span class="icon mdi mdi-face"></span>Account</a><a class="dropdown-item" href="#"><span class="icon mdi mdi-settings"></span>Settings</a><a class="dropdown-item" href=""><span class="icon mdi mdi-power"></span>Logout</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
-
+    <div class="be-wrapper be-fixed-sidebar">
+        <nav class="navbar navbar-expand fixed-top be-top-header">
+            <div class="container-fluid">
+            <div class="be-navbar-header"><a class="navbar-brand" href="../index.php"></a>
+            </div>
+            <div class="page-title"><span>Cadastro de Usuários</span></div>
+            <div class="be-right-navbar">
+                <ul class="nav navbar-nav float-right be-user-nav">
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false"><img src="../images/avatar01.png" alt="Avatar"><span class="user-name">Túpac Amaru</span></a>
+                    <div class="dropdown-menu" role="menu">     
+                    <div class="user-info">
+                        <div class="user-name">Túpac Amaru</div>
+                        <div class="user-position online">Available</div>
+                    </div><a class="dropdown-item" href=""><span class="icon mdi mdi-face"></span>Account</a><a class="dropdown-item" href="#"><span class="icon mdi mdi-settings"></span>Settings</a><a class="dropdown-item" href=""><span class="icon mdi mdi-power"></span>Logout</a>
+                    </div>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </div>
 <?php
 
 	//Instancio um objeto do tipo usuarios()

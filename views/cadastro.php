@@ -1,13 +1,45 @@
 <?php
 	include "../scripts/usuarios.php";
 ?>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<title>Cadastro de Usuários</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="assets/img/logo-fav.png">
+        <title>Cadastro de Usuários</title>
+        <link rel="stylesheet" type="text/css" href="../lib/perfect-scrollbar/css/perfect-scrollbar.css"/>
+        <link rel="stylesheet" type="text/css" href="../lib/material-design-icons/css/material-design-iconic-font.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../lib/jquery.vectormap/jquery-jvectormap-1.2.2.css"/>
+        <link rel="stylesheet" type="text/css" href="../lib/jqvmap/jqvmap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../lib/datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/app.css"/>
 	</head>
 	<body>
-		<b>
-		<h1>Cadastro de Usuários</h1>
+    <nav class="navbar navbar-expand fixed-top be-top-header">
+        <div class="container-fluid">
+          <div class="be-navbar-header"><a class="navbar-brand" href=""></a>
+          </div>
+          <div class="page-title"><span><h1>Cadastro de Usuários</h1></span></div>
+          <div class="be-right-navbar">
+            <ul class="nav navbar-nav float-right be-user-nav">
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false"><img src="" alt="Avatar"><span class="user-name">Túpac Amaru</span></a>
+                <div class="dropdown-menu" role="menu">     
+                  <div class="user-info">
+                    <div class="user-name">Túpac Amaru</div>
+                    <div class="user-position online">Available</div>
+                  </div><a class="dropdown-item" href=""><span class="icon mdi mdi-face"></span>Account</a><a class="dropdown-item" href="#"><span class="icon mdi mdi-settings"></span>Settings</a><a class="dropdown-item" href=""><span class="icon mdi mdi-power"></span>Logout</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
 <?php
 
 	//Instancio um objeto do tipo usuarios()
@@ -128,6 +160,30 @@
 			<?php endforeach;?>	
 		</table>
 	</div>
-		</b>
+        <script src="../lib/jquery/jquery.min.js" type="text/javascript"></script>
+        <script src="../lib/perfect-scrollbar/js/perfect-scrollbar.min.js" type="text/javascript"></script>
+        <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <script src="../js/app.js" type="text/javascript"></script>
+        <script src="../lib/jquery-flot/jquery.flot.js" type="text/javascript"></script>
+        <script src="../lib/jquery-flot/jquery.flot.pie.js" type="text/javascript"></script>
+        <script src="../lib/jquery-flot/jquery.flot.time.js" type="text/javascript"></script>
+        <script src="../lib/jquery-flot/jquery.flot.resize.js" type="text/javascript"></script>
+        <script src="../lib/jquery-flot/plugins/jquery.flot.orderBars.js" type="text/javascript"></script>
+        <script src="../lib/jquery-flot/plugins/curvedLines.js" type="text/javascript"></script>
+        <script src="../lib/jquery-flot/plugins/jquery.flot.tooltip.js" type="text/javascript"></script>
+        <script src="../lib/jquery.sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+        <script src="../lib/countup/countUp.min.js" type="text/javascript"></script>
+        <script src="../lib/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="../lib/jqvmap/jquery.vmap.min.js" type="text/javascript"></script>
+        <script src="../lib/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
+        <script src="../js/app-dashboard.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            //-initialize the javascript
+            App.init();
+            App.dashboard();
+        
+        });
+        </script>
 	</body>
 </html>

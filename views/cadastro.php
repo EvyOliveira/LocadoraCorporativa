@@ -26,7 +26,7 @@
             <div class="be-navbar-header"><a class="navbar-brand" href="../index.php"></a>
             </div>
             <div class="page-title"><span>Cadastro de Usuários</span></div>
-            <div class="be-right-navbar">
+            <div class="be-right-navbar-sucess">
                 <ul class="nav navbar-nav float-right be-user-nav">
                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false"><img src="../images/avatar01.png" alt="Avatar"><span class="user-name">Túpac Amaru</span></a>
                     <div class="dropdown-menu" role="menu">     
@@ -40,7 +40,6 @@
             </div>
             </div>
         </nav>
-    </div>
 <?php
 
 	//Instancio um objeto do tipo usuarios()

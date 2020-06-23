@@ -1,6 +1,18 @@
 <?php
     include "../scripts/usuarios.php";
-    //print_r($_SESSION["altera"]);
+    require_once("DAO/usuariosDAO.php");
+
+    $myuser = new usuarios();
+    $myuser-> setNome($_POST['f_nome']);
+    $myuser-> setEmail($_POST['f_email']);
+    $myuser-> setId($_POST['f_id']);
+    $myuser-> setPerfil($_POST['f_perfil']);
+    $myuser-> setPerfil($_POST['f_perfil']);
+    $myuserDAO-> new usuariosDAO($myuser);
+    $myuserDAO-> update();
+    Header( "Location: cadastro.php" );
+
+    print_r($_SESSION["altera"]);
     print_r($_SESSION["altera"]["f_id"]);
     print_r($_SESSION["altera"]["f_nome"]);
     print_r($_SESSION["altera"]["f_mail"]);

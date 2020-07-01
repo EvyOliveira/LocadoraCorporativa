@@ -9,7 +9,7 @@
     $myuser-> setPerfil($_POST['f_perfil']);
     $myuser-> setPerfil($_POST['f_perfil']);
     $myuserDAO-> new usuariosDAO($myuser);
-    $myuserDAO-> update();
+    $myuserDAO-> update($_POST['f_id']);
     Header( "Location: cadastro.php" );
 
     print_r($_SESSION["altera"]);

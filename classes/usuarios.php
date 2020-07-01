@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-//require_once 'Crud.php';
+require_once 'Crud.php';
 
 	class usuarios extends Crud {
 		protected $table = 'usuarios';

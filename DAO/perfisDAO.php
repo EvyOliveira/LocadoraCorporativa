@@ -1,6 +1,6 @@
 <?php
     //require_once '$_SERVER['DOCUMENT_ROOT'].'classes/perfis.php';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/classes/perfis.php');
+    require_once ($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/classes/perfis.php');
 
     class perfisDAO extends Crud {
         private $d_perfil;

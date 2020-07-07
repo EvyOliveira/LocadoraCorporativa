@@ -2,7 +2,7 @@
     session_start();
     print_r($_SESSION['dados']);
     $my_val = $_SESSION['dados'];   
-    include ($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/DAO/usuariosDAO.php');
+    include ($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/DAO/usuariosDAO.php');
     $myuser = new usuarios();
     if(isset($_POST['f_id']) and isset($_POST['f_senha'])){
         $myuser->setId($_POST['f_id']);
@@ -40,3 +40,6 @@ function carregaTelaResetSenha($my_val){
 }
 
 ?>
+
+
+

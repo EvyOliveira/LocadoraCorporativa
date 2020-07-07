@@ -1,5 +1,6 @@
-<?php   
-    require_once 'DAO/usuariosDAO.php';    
+<?php
+    error_reporting(0);
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/DAO/usuariosDAO.php');       
 ?>
 <?php
 			$myuser = new usuarios();
@@ -8,14 +9,29 @@
                 $myuser->setSenha($_POST['f_senha']);
                               
                 $myuserDAO = new usuariosDAO($myuser);                
-                $retorno = $myuserDAO->autenticacao();
-                //print_r($retorno);                   
-                //print_r(count($retorno));
+                $retorno = $myuserDAO->autenticacao();                
                 if(count($retorno) > 0){
-                    if($_POST['f_senha'] == "123456"){                       
-                        Header("Location:./views/trocaSenhaTemp.php");
+                    if($_POST['f_senha'] == "123456"){
+                        $resultado = $myuserDAO->busca($_POST['f_mail'], md5($_POST['f_senha']));
+                        foreach($resultado as $key=>$value):
+                            //print_r($value);
+                            $id = $value->id;
+                            $nome = $value->nome;
+                            $email = $value->email;
+                            $perfil = $value->id_perfil;
+                        endforeach;                        
+                        session_start();
+                        $_SESSION["altera"]['f_id'] = $id;
+                        $_SESSION["altera"]['f_nome'] = $nome;
+                        $_SESSION["altera"]['f_mail'] = $email;
+                        $_SESSION["altera"]['f_perfil'] = $perfil;                    
+                        //Header("Location:./views/trocaSenhaTemp.php");
+                        $URL = "./views/trocaSenhaTemp.php";
+                        echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
                     }else{                        
-                        Header("Location:./views/cadastro.php");
+                        //Header("Location:./views/cadastro.php");
+                        $URL = "./views/cadastro.php";
+                        echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
                     }
                 }else{
                     echo "<script language=javascript>alert( 'Usuário/Senha Incorreto!' );</script>";
@@ -27,7 +43,7 @@
         <meta charset="UTF-8">
         <title>Login</title>
         <link href="./css/reset.css" type="text/css" rel="stylesheet">
-        <link href="./css/style-home.css" type="text/css" rel="stylesheet">
+        <link href="./css/style.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <div class="formLogin">

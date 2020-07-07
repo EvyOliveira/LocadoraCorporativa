@@ -1,6 +1,6 @@
 <?php
     //require_once '$_SERVER['DOCUMENT_ROOT'].'classes/perfis.php';    
-    require_once ($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/classes/usuarios.php');
+    require_once ($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/classes/usuarios.php');
     
     class usuariosDAO extends Crud {
         private $d_usuario;
@@ -67,13 +67,33 @@
             $stmt->bindParam(':id', $id);
             return $stmt->execute();	
         }
-
+        public function busca($login, $senha)
+        {
+            $sql  = "SELECT * FROM $this->table WHERE email = :login and senha = :senha";
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':login', $login);
+            $stmt->bindParam(':senha', $senha);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
         public function reset(){            
             $sql  = "UPDATE $this->table SET senha = '". $this->d_usuario->getSenha() ."'
                         WHERE id = '". $this->d_usuario->getId() ."'";
             //$sql = "UPDATE $this->table SET senha = 'AAAAAAAA' WHERE id = 15";
             $stmt = DB::prepare($sql);
             return $stmt->execute();
+        }
+        public function login()
+        {
+            // var_dump ($this->d_usuario);
+            // exit();
+            $sql  = "SELECT * FROM $this->table WHERE email = :email and senha = :senha";
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':email', $this->d_usuario->getEmail());
+            $stmt->bindParam(':senha', $this->d_usuario->getSenha());
+            $stmt->execute();
+            $count = $stmt->rowCount();
+            return $count;
         }
     
         public function autenticacao(){

@@ -1,7 +1,7 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/fpdf182/fpdf.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/DAO/usuariosDAO.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/DAO/perfisDAO.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/fpdf182/fpdf.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/DAO/usuariosDAO.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/DAO/perfisDAO.php');
 
 $myuser = new usuarios();
 $userDAO = new usuariosDAO($myuser);

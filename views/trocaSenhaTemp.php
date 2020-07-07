@@ -1,6 +1,7 @@
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/DAO/usuariosDAO.php');
-    print_r($_SESSION['altera']);
+    session_start();
+    require_once ($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/DAO/usuariosDAO.php');
+    //print_r($_SESSION['altera']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,7 @@
         </form>
     </div>
     <?php
-    print_r($_POST);
+    //print_r($_POST);
         $myuser = new usuarios();
         if(isset($_POST['f_senha'])){
             $myuser->setSenha($_POST['f_senha']);            
@@ -35,7 +36,9 @@
             $myuser->setPerfil($_SESSION["altera"]['f_perfil']);
             $myuserDAO = new usuariosDAO($myuser);
             $myuserDAO->update();
-            Header("Location:../index.php");                      
+            //Header("Location:../index.php"); 
+            $URL = "../index.php";
+            echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";                     
         }
 	?>        
 </body>

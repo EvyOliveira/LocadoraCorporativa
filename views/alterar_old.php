@@ -1,5 +1,5 @@
 <?php    
-    require_once ($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/DAO/usuariosDAO.php');
+    require_once ($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/DAO/usuariosDAO.php');
     print_r($_SESSION["altera"]);
 ?>
 <!DOCTYPE html>
@@ -36,7 +36,7 @@
         </form>
     </div>
     <?php
-        require_once ($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/DAO/usuariosDAO.php');
+        require_once ($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/DAO/usuariosDAO.php');
         $myuser = new usuarios();
         if(isset($_POST['f_nome']) and isset($_POST['f_email'])){           
             $myuser->setId($_POST["f_id"]);

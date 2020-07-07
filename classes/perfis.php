@@ -1,6 +1,7 @@
 <?php
 	class perfis {
 		private $id;
+		
 		private $nome;			
 		public function getId(){
 			return $this->id;

@@ -43,7 +43,7 @@
         <meta charset="UTF-8">
         <title>Login</title>
         <link href="./css/reset.css" type="text/css" rel="stylesheet">
-        <link href="./css/style.css" type="text/css" rel="stylesheet">
+        <link href="./css/style-home.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <div class="formLogin">

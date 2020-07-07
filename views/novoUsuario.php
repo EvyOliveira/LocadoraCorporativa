@@ -1,6 +1,6 @@
 <?php
-	require_once ($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/DAO/usuariosDAO.php');
-	require_once ($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/DAO/perfisDAO.php');
+	require_once ($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/DAO/usuariosDAO.php');
+	require_once ($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/DAO/perfisDAO.php');
 ?>
 <html lang="en">
 <head>
@@ -21,7 +21,8 @@
             <br/>			
 			<?php 
 				echo "<select name='f_perfil' id='f_perfil'>";
-				$perfDAO = new perfisDAO();
+				$perf = new perfis();
+				$perfDAO = new perfisDAO($perf);
 				$arr = $perfDAO->load();
 				foreach($arr as $perfis):
 					if($perfis->getId() == $_POST['f_perfil']){

@@ -1,6 +1,6 @@
 <?php
-	include ($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/DAO/usuariosDAO.php');
-	include ($_SERVER['DOCUMENT_ROOT'] . 'login_DAO/DAO/perfisDAO.php');
+	include ($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/DAO/usuariosDAO.php');
+	include ($_SERVER['DOCUMENT_ROOT'] . '/login_DAO/DAO/perfisDAO.php');
 ?>
 <html>
 	<head>
@@ -24,7 +24,8 @@
 		echo "<H3>Senha: <input class='form-control' type=password name=f_senha value=".$_POST['f_senha']." readonly=“true”></H3>";
 		echo "<br/>";
 		echo "<select class='form-control' name='f_perfil' id='f_perfil'>";
-		$perfDAO = new perfisDAO();
+	    $perf = new perfis();
+		$perfDAO = new perfisDAO($perf);
 		$arr = $perfDAO->load();
 		foreach($arr as $perfis):
 		    if($perfis->getId() == $_POST['f_perfil']){
@@ -49,7 +50,8 @@
 		echo "<H3>Senha: <input  class='form-control' type=password name=f_senha></H3>";
 		//echo "<br/>";
 		echo "<H3>Perfil: <select class='form-control' name='f_perfil' id='f_perfil'></H3>";
-		$perfDAO = new perfisDAO();
+		$perf = new perfis();
+		$perfDAO = new perfisDAO($perf);
 		$arr = $perfDAO->load();
 		foreach($arr as $perfis):
 		    echo("<option value =".$perfis->getId().">".$perfis->getNome()."</option>");

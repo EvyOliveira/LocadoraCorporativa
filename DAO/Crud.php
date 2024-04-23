@@ -7,7 +7,7 @@ abstract class Crud extends DB{
 	protected $table;
 
 	abstract public function insert();
-	abstract public function update($id);
+	abstract public function update();
 	abstract public function autenticacao();
 
 	public function find($id){
@@ -31,5 +31,4 @@ abstract class Crud extends DB{
 		$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 		return $stmt->execute(); 
 	}
-
 }

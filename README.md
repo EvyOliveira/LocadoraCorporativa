@@ -61,4 +61,9 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
 (3, 'teste', 'teste@gmail.com', 'teste');
 
 CREATE TABLE `perfis` (   `id` int(11) NOT NULL COMMENT 'Chave primária da relação',   `nome` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Nome do perfil' ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+ALTER TABLE usuarios
+ADD CONSTRAINT fk_id_perfil
+FOREIGN KEY (id_perfil)
+REFERENCES perfil(id);
 ```
